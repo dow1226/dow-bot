@@ -1,8 +1,11 @@
+import random
+
 import discord
 from discord.ext import commands
 
 from dow_bot.settings import BOT_TOKEN
 from dow_bot.settings import TEST_CHANNEL_ID
+from dow_bot.settings import URL_PIC
 
 intents = discord.Intents.default()
 intents.members = True
@@ -16,7 +19,7 @@ async def on_ready():
 
 @bot.event
 async def on_member_join(member):
-    channel = bot.get_channel(TEST_CHANNEL_ID)
+    channel = bot.get_channel(int(TEST_CHANNEL_ID))
     await channel.send(f'{member} join!')
 
 @bot.event
@@ -26,5 +29,14 @@ async def on_member_remove(member):
 @bot.command()
 async def ping(ctx):
     await ctx.send(f'{round(bot.latency * 1000)} (ms)')
+
+# @bot.command()
+# async def picture(ctx):
+#     pic = discord.File()
+#     await ctx.send(file=pic)
+
+@bot.command()
+async def picture(ctx):
+    await ctx.send(URL_PIC)
 
 bot.run(BOT_TOKEN)
