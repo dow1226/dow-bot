@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 
 from dow_bot.settings import BOT_TOKEN
+from dow_bot.settings import TEST_CHANNEL_ID
 
 intents = discord.Intents.default()
 intents.members = True
@@ -15,7 +16,7 @@ async def on_ready():
 
 @bot.event
 async def on_member_join(member):
-    channel = bot.get_channel(965637244377497620)
+    channel = bot.get_channel(TEST_CHANNEL_ID)
     await channel.send(f'{member} join!')
 
 @bot.event
