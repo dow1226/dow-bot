@@ -7,7 +7,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 
-bot = commands.Bot(command_prefix='[', intents=intents)
+bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.event
 async def on_ready():
@@ -21,5 +21,9 @@ async def on_member_join(member):
 @bot.event
 async def on_member_remove(member):
     print(f"{member} leave!")
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send(f'{round(bot.latency * 1000)} (ms)')
 
 bot.run(BOT_TOKEN)
