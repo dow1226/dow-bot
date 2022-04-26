@@ -17,8 +17,8 @@ class Events(Cog_Extension):
 
     @commands.Cog.listener()
     async def on_message(self, msg):
-        if msg.content == 'apple':
-            await msg.channel.send('hi')
+        if msg.content == '阿和':
+            await msg.channel.send('雞掰仔')
 
 def setup(bot):
     bot.add_cog(Events(bot))
