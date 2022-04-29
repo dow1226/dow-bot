@@ -1,12 +1,11 @@
-import random
 import os
 
 import discord
 from discord.ext import commands
 
-from dow_bot.settings import BOT_TOKEN
+# from dow_bot.settings import BOT_TOKEN
 
-from dow_bot.settings import URL_PIC
+# from dow_bot.settings import URL_PIC
 
 intents = discord.Intents.default()
 intents.members = True
@@ -39,4 +38,4 @@ for filename in os.listdir('./cmds'):
         bot.load_extension(f'cmds.{filename[:-3]}')
 
 if __name__ == '__main__':
-    bot.run(BOT_TOKEN)
+    bot.run('OTY1NjM2MTY4MzU0MDA0OTky.Yl2Eww.u01PaEYLPTHkyZ4KnDiy5sCKdG0')

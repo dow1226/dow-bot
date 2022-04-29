@@ -14,7 +14,7 @@ class React(Cog_Extension):
 
     @commands.command()
     async def picture(self, ctx):
-        await ctx.send(URL_PIC)
+        await ctx.send('none')
 
 
 def setup(bot):
